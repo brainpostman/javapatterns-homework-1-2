@@ -31,11 +31,7 @@ public class Main {
         }
         logger.log("Создаем и наполняем список");
         Random r = new Random();
-        int finalM = m;
-        List<Integer> numlist = new ArrayList<>(Arrays.asList(new Integer[n]))
-                .stream()
-                .map(num -> r.nextInt(finalM))
-                .toList();
+        List<Integer> numlist = r.ints(0, m).limit(n).boxed().toList();
         StringBuilder sb = new StringBuilder(n);
         sb.append("Вот случайный список: ");
         for (Integer num : numlist) {
